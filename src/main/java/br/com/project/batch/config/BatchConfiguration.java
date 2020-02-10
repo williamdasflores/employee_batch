@@ -53,9 +53,8 @@ public class BatchConfiguration {
     public LineMapper<Employee> lineMapper() {
         DefaultLineMapper<Employee> defaultLineMapper = new DefaultLineMapper<>();
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
-        lineTokenizer.setDelimiter(",");
         lineTokenizer.setStrict(false);
-        lineTokenizer.setNames(new String[] { "first_name", "last_name", "email", "gender", "address", "city" });
+        lineTokenizer.setNames(new String[] {"id", "first_name", "last_name", "email", "gender", "address", "city"});
 
         EmployeeFieldSetMapper fieldSetMapper = new EmployeeFieldSetMapper();
         defaultLineMapper.setLineTokenizer(lineTokenizer);
